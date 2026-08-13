@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container my-4">
+    <h2>Your History</h2>
+    <hr>
+    
+    {% if reports %}
+        {% for r in reports %}
+            <div class="card mb-3 p-3 shadow-sm" style="border: 1px solid #ddd; border-radius: 8px; background: #fff; margin-bottom: 15px;">
+                <h5 style="color: #333;"><strong>Query / Resume:</strong></h5>
+                <p>{{ r.resume_text }}</p>
+                <hr>
+                <h5 style="color: #333;"><strong>AI Response:</strong></h5>
+                <p style="white-space: pre-line;">{{ r.result }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No search history found yet. Try analyzing a query on the dashboard!</p>
+    {% endif %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card-box">
+    <h3>Create Account ✨</h3>
+    <p class="subtitle">Sign up to get started</p>
+
+    {% if message %}
+        <p style="color: #e11d48; font-size: 0.88rem; margin-bottom: 12px; background: #ffe4e6; padding: 8px; border-radius: 6px;">{{ message }}</p>
+    {% endif %}
+
+    <form action="/signup" method="POST">
+        <input type="email" name="email" class="input-field" placeholder="Enter your email" required>
+        <input type="password" name="password" class="input-field" placeholder="Create password" required>
+        <button type="submit" class="btn-submit">Sign Up</button>
+    </form>
+
+    <div style="margin-top: 14px; font-size: 0.88rem; color: #64748b;">
+        Already have an account? <a href="/login" class="link-action" style="display: inline;">Login</a>
+    </div>
+</div>
+
+{% endblock %}

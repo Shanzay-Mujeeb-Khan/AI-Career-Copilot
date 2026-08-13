@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card-box">
+    <h3>Welcome Back 👋</h3>
+    <p class="subtitle">Login to access your account</p>
+
+    <form action="/login" method="POST">
+        <input type="email" name="email" class="input-field" placeholder="Enter your email" required>
+        <input type="password" name="password" class="input-field" placeholder="Enter your password" required>
+        <button type="submit" class="btn-submit">Login</button>
+    </form>
+
+    <a href="/forgot-password" class="link-action">Forgot Password?</a>
+    <div style="margin-top: 12px; font-size: 0.88rem; color: #64748b;">
+        Don't have an account? <a href="/signup" class="link-action" style="display: inline;">signup</a>
+    </div>
+</div>
+
+{% endblock %}

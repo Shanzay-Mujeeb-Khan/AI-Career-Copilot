@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card-box">
+    <h3>Reset Password 🔑</h3>
+    <p class="subtitle">Enter your email and new password</p>
+
+    {% if message %}
+        <p style="color: #0284c7; font-size: 0.88rem; margin-bottom: 12px; background: #e0f2fe; padding: 8px; border-radius: 6px;">{{ message }}</p>
+    {% endif %}
+
+    <form action="/forgot-password" method="POST">
+        <input type="email" name="email" class="input-field" placeholder="Enter your email" required>
+        <input type="password" name="new_password" class="input-field" placeholder="Enter new password" required>
+        <button type="submit" class="btn-submit">Update Password</button>
+    </form>
+
+    <div style="margin-top: 14px; font-size: 0.88rem;">
+        <a href="/login" class="link-action">Back to Login</a>
+    </div>
+</div>
+
+{% endblock %}

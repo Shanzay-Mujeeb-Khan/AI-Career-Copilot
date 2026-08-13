@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card-box" style="max-width: 650px;">
+    <h3>AI Career Copilot 🚀</h3>
+    <p class="subtitle">Paste your resume or ask any career questions</p>
+
+    <form action="/dashboard" method="POST">
+        <textarea name="prompt" class="input-field" rows="6" placeholder="Paste your resume here OR ask any career questions..." required style="resize: vertical; font-family: inherit;"></textarea>
+        <button type="submit" class="btn-submit">Analyze with Gemini AI</button>
+    </form>
+
+    {% if result %}
+        <div style="margin-top: 20px; text-align: left; background: #f8fafc; padding: 16px; border-radius: 8px; border: 1px solid #e2e8f0;">
+            <h4 style="font-size: 1rem; color: #0f172a; margin-bottom: 8px;">Analysis Result:</h4>
+            <p style="font-size: 0.9rem; color: #334155; white-space: pre-line;">{{ result }}</p>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}
